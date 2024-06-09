@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun, Sayangku!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #ffebf0; /* Warna latar belakang */
+            background-image: url('https://www.transparenttextures.com/patterns/food.png'); /* Pola latar belakang */
+        }
+        #birthday-wish {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #333;
+            border: 2px solid #ff69b4; /* Warna border */
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #fff; /* Warna latar pesan */
+            display: inline-block;
+            text-align: left;
+            width: 80%;
+            max-width: 600px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+            background-color: #ff69b4; /* Warna tombol */
+            color: #fff; /* Warna teks tombol */
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #ff1493; /* Warna tombol saat dihover */
+        }
+        .wish-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%; /* Membuat gambar berbentuk bulat */
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .wish-container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        audio {
+            display: none; /* Sembunyikan kontrol audio */
+        }
+    </style>
+</head>
+<body>
+    <h1>Selamat Ulang Tahun, Sayangku!</h1>
+    <div id="birthday-wish" class="wish-container">
+        <img src="https://example.com/default-image.jpg" alt="Ucapan Ulang Tahun" class="wish-image">
+        <div>Klik tombol di kanan Sayangku! 🎉</div>
+    </div>
+    <button onclick="generateWish()">Kllik ini sayangku 💕 🎂</button>
+
+    <!-- Elemen audio untuk memutar musik lokal -->
+    <audio id="background-music" autoplay loop>
+        <source src="musik/your-music-file.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung tag audio.
+    </audio>
+
+    <script>
+        const wishes = [
+            {
+                text: "Selamat ulang tahun yang ke-20!🎉 Hari ini adalah hari istimewa, karena hari ini adalah hari kelahiranmu yang membawa kebahagiaan ke dalam hidupku. Di usiamu yang baru ini, aku berharap semua impian dan harapanmu bisa terwujud.💞",
+                image: "https://example.com/image1.jpg"
+            },
+            {
+                text: "Happy birthday, sayangku! Di usiamu yang ke-20 ini, semoga semua impian dan harapanmu menjadi kenyataan. Aku akan selalu ada di sampingmu, mendukungmu setiap langkah yang kamu ambil. 🥰",
+                image: "https://example.com/image2.jpg"
+            },
+            {
+                text: "Halo cintaku! Selamat ulang tahun! Semoga setiap momen di tahun ini membawa kebahagiaan dan kesuksesan. Terima kasih telah menjadi cahaya dalam hidupku. Aku mencintaimu selamanya. 💕",
+                image: "https://example.com/image3.jpg"
+            },
+            {
+                text: "Selamat ulang tahun untuk kekasih tercintaku! Kamu adalah alasan senyumku setiap hari. Di usiamu yang baru ini, semoga kita terus bersama mengejar mimpi-mimpi kita. Aku mencintaimu tanpa batas. 🌹",
+                image: "https://example.com/image4.jpg"
+            },
+            {
+                text: "Hei sayangku, selamat ulang tahun yang ke-20! Aku berdoa agar setiap langkahmu selalu diberkati. Terima kasih telah menjadi bagian dari hidupku. Aku mencintaimu lebih dari yang bisa kamu bayangkan. 🌟",
+                image: "https://example.com/image5.jpg"
+            }
+        ];
+
+        let currentWishIndex = 0;
+
+        function generateWish() {
+            if (currentWishIndex < wishes.length) {
+                const wish = wishes[currentWishIndex];
+                document.querySelector('#birthday-wish div').innerHTML = wish.text;
+                document.querySelector('#birthday-wish img').src = wish.image;
+                currentWishIndex++;
+            } else {
+                document.querySelector('#birthday-wish div').innerHTML = "Love you sayang! 🎉";
+                document.querySelector('#birthday-wish img').src = "https://example.com/default-image.jpg";
+            }
+        }
+    </script>
+</body>
+</html>
